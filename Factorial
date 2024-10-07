@@ -1,0 +1,21 @@
+3 start:5
+factof:7
+result:1 
+
+7 factof cpn
+4 cpn zero 54
+mul:1 cpn temp temp
+1 counter 12 counter
+4 store counter 26
+3 12 
+2 cpn 12 cpn
+5 cpn 12 55
+7 48 46 
+7 47 49
+7 47 48
+3 12
+cpn:0 store:1
+zero:0 temp:0 counter:0
+1 cpn 9 9
+stop:9
+7 46 result 9
