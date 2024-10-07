@@ -1,0 +1,33 @@
+3 start
+
+first_element_location:71
+length:3
+
+start:4 length store stop
+      4 length one stop
+
+2 length one len 
+1 first_element_location len move_address
+
+7 first_element_location address
+
+jump:7 move_address move_address1
+
+7 address address1
+
+
+copy:7 address:0 store
+copy1:7 move_address:0 address1:0
+copy2:7 store move_address1:0
+halt:4 address move_address stop
+2 move_address one s
+4 s address stop
+
+1 address one address
+2 move_address one move_address
+3 jump
+
+stop:9 
+one:1 store:0 len:0 s:0
+1 2 3 4 5
+3 2 1 
