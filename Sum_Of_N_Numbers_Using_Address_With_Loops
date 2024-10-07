@@ -1,0 +1,27 @@
+3 start
+1 2 3 4 5
+length:3
+source_address:3
+destination_address:100 
+
+start:7 source_address address1
+7 destination_address destination1
+7 destination_address destination2
+7 destination_address destination3
+
+
+0 0 destination3:0
+
+loop:1 address1:0 destination2:0 destination1:0
+
+1 counter one counter
+4 counter length stop
+
+1 address1 one address1
+
+3 loop
+
+
+
+stop:9
+one:1 counter:0
