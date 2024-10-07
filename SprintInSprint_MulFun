@@ -1,0 +1,180 @@
+3 start
+controller:Program
+track:0 one:1 two:2 three:3 four:4 five:5 six:6 seven:7 nine:9 zero:0  eleven:11 eight:8
+addtracker:0  ifFJump:0 
+mulRes:0 mulCounter:0 controller1:0 counter:0
+ 
+
+start:2 controller one track
+
+loop:7 controller inst_0
+  7 controller inst_1
+  7 controller inst_2
+  7 controller inst_3
+  7 controller inst_4
+  7 controller inst_5
+  7 controller inst_6
+  7 controller inst_7
+  7 controller inst_9
+  7 controller inst_11
+ 
+   
+  
+ 
+check_halt:4 inst_9:0  nine stop
+
+check_jump:4 inst_3:0 three jump3
+
+check_add:4 inst_1:0 one
+  perform_addition
+
+check_sub:4 inst_2:0 two
+  perform_substration
+
+check_equal:4 inst_4:0 four
+  check_ifEqual
+
+check_less:4 inst_5:0 five
+  check_ifless
+
+check_copy:4 inst_7:0 seven
+  check_copyval
+
+check_0:4 inst_0:0 zero
+  check_copyU0
+
+Check_Accept_Input:4 inst_6:0 six Accept_Input
+
+MUL:4 inst_11:0 eleven Perform_multiplication
+
+
+
+
+perform_addition:1 controller one add1 
+  1 add1 one add2
+  1 add2 one storeadd
+  7 add1:0 add1
+  7 add2:0 add2
+  7 storeadd addtracker
+  7 storeadd:0 storeadd
+  1 track add1 add1
+  1 track add2 add2
+  1 track storeadd storeadd
+  7 add1 add
+  7 add2 add3
+  7 storeadd storeadd1
+  operation:1 add:0 add3:0 
+  storeadd1:0
+  1 addtracker one controller
+3 loop
+
+perform_substration:0 2 operation
+  3 perform_addition
+
+check_ifEqual:1 controller one val1address
+  1 val1address one val2address
+  1 val2address one ifTJump
+  1 ifTJump one ifFJump
+
+  7 val1address:0 val1address
+  7 val2address:0 val2address
+
+  1 val1address track 
+  val1address
+  1 val2address track 
+ val2address
+
+  7 val1address value1add
+  7 val2address value2add
+
+  operation1:4 value1add:0 
+  value2add:0 ifTrueJump
+
+  ifFalseJump:1 ifTJump one 
+  controller
+3 loop
+
+  ifTrueJump:1 ifTJump:0 track 
+  ifTJump
+  7 ifTJump controller  
+
+3 loop
+
+
+check_ifless:0 5 operation1
+   3 check_ifEqual
+
+check_copyval:1 controller one source
+  1 source one destination 
+  1 destination one controller 
+  7 source:0 source
+  7 destination:0 destination
+  1 source track source1
+  1 destination track 
+  destination1
+  7 source1:0 destination1:0 
+3 loop
+
+check_copyU0:1 controller one sourceAdd
+  1 sourceAdd one 
+  destinationAdd 
+  1 destinationAdd one 
+  controller 
+  7 destinationAdd:0 
+  destinationAdd
+  1 destinationAdd track 
+  destinationAdd1
+  7 sourceAdd:0 
+  destinationAdd1:0 
+3 loop
+
+
+
+jump3:1 controller one 
+  adjacent_cell
+  1 track adjacent_cell:0 
+  controller 
+3 loop
+
+Accept_Input:1 controller one 
+   addressForInput
+   1 addressForInput one 
+   controller
+   7 addressForInput:0 
+   addressForInputCopy
+   1 addressForInputCopy track 
+   addressForInputCopy
+   6 addressForInputCopy:0 
+
+3 loop
+
+Perform_multiplication:1 controller four controller1
+1 controller one AddressVal1
+1 AddressVal1 one AddressVal2
+1 AddressVal2 one storeMulAdd
+7 AddressVal1:0 AddressVal1
+7 AddressVal2:0 AddressVal2
+7 storeMulAdd:0 storeMulAdd
+1 AddressVal1 track Value1
+1 AddressVal2 track Value2
+1 storeMulAdd track storeMulAdd
+7 storeMulAdd storeMulAddCopy1
+7 storeMulAddCopy1 storeMulAddCopy2
+
+7 Value1:0 Value1
+7 Value2:0 Value2
+
+1 Value1 storeMulAddCopy2:0 storeMulAddCopy1:0
+1 counter one counter
+4 counter Value2 stop
+3 Perform_multiplication 
+
+7 controller1 controller
+3 loop
+
+
+
+
+stop:9
+
+Program:3 4 0 6 22 6 23 11 22 23 3 9
