@@ -1,0 +1,47 @@
+3 start
+seq_location:100
+seq_length:3
+cycle_location:110
+cycle_length:9
+
+start:7 seq_location 
+      seq_location2
+
+Input:6 seq_location2:0
+      1 counter1 one counter1
+      4 seq_length counter1 
+      check
+      1 seq_location2 one 
+      seq_location2
+
+3 Input
+
+ check:4 cycle_length zero stop
+  
+  7 seq_location seq_location1
+  7 cycle_location 
+  cycle_location1
+  
+
+  small:4 counter cycle_length stop
+7 seq_location1:0 
+  cycle_location1:0
+  1 counter one counter
+  1 counter2 one counter2
+  1 seq_location1 one 
+  seq_location1
+  
+  1 cycle_location1 one 
+  cycle_location1
+  
+  4 counter2 seq_length set 
+  
+  3 small
+  set:7 seq_location 
+  seq_location1
+  7 zero counter2
+  3 small
+
+
+stop:9
+zero:0 counter:0 counter1:0 one:1 counter2:0
